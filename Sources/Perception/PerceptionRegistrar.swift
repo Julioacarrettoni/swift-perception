@@ -1,5 +1,4 @@
 import Foundation
-import IssueReporting
 
 /// Provides storage for tracking and access to data changes.
 ///
@@ -211,7 +210,7 @@ extension PerceptionRegistrar: Hashable {
         !_PerceptionLocals.skipPerceptionChecking,
         self.isInSwiftUIBody(file: filePath, line: line)
       {
-        reportIssue(
+        print(
           """
           Perceptible state was accessed but is not being tracked. Track changes to state by \
           wrapping your view in a 'WithPerceptionTracking' view. This must also be done for any \
